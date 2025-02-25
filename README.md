@@ -69,9 +69,10 @@ Includes high-quality screenshots of:
   
 
 
-![Product Template External Ref Tab](/product_external_ref_tags/static/description/product_template_tab.png)
-![Supplier Info Datasheet URL](/product_external_ref_tags/static/description/supplier_info_url.png)
-![Sales Order Recompute Button](/product_external_ref_tags/static/description/sales_order_recompute.png)
+![Product Template External Ref Tab](static/description/product_template_tab.png)
+![Supplier Info Datasheet URL](static/description/supplier_info_url.png)
+![Sales Order Recompute Button](static/description/sales_order_recompute.png)
+
 
 ## FAQs
 
