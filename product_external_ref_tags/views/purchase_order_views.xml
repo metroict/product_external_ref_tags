@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_inherit_datasheet" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.datasheet</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Insert datasheet_url in the line tree, after 'name' -->
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="datasheet_url" widget="url" optional="show"/>
+            </xpath>
+            <!-- Insert datasheet_url in the line popup form, after 'name' -->
+            <xpath expr="//field[@name='order_line']/form//field[@name='name']" position="after">
+                <field name="datasheet_url" widget="url"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

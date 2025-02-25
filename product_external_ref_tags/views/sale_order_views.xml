@@ -1,0 +1,51 @@
+<odoo>
+    <!-- 1) Inherit the main Sales Order form to insert ref_type in the line subviews
+           and add the Recompute Descriptions button. -->
+    <record id="sale_order_ref_type_form_view" model="ir.ui.view">
+        <field name="name">sale.order.ref.type.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- A) Recompute Descriptions Button in the Sale Order header -->
+            <xpath expr="//header" position="inside">
+                <button
+                    name="action_recompute_descriptions"
+                    string="Recompute Descriptions"
+                    type="object"
+                    class="btn-primary"
+                />
+            </xpath>
+
+            <!-- B) Add a default for ref_type in newly created lines (optional) -->
+            <field name="order_line" position="attributes">
+                <attribute name="context">{'default_ref_type': 'internal'}</attribute>
+            </field>
+
+            <!-- C) In the line FORM subview, insert ref_type after 'tax_id' -->
+            <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="after">
+                <field name="ref_type"/>
+            </xpath>
+
+            <!-- D) In the line TREE subview (inline grid), insert ref_type after 'price_unit' -->
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                <field name="ref_type" optional="show"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- 2) (Optional) Directly inherit the sale.order.line tree view if you want
+           to place ref_type in a specific spot outside of the embedded subview. -->
+    <record id="sale_order_line_ext_tree_view" model="ir.ui.view">
+        <field name="name">sale.order.line.ext.tree.ref_type</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <!-- Example: insert ref_type right after the 'name' field. -->
+            <field name="name" position="after">
+                <field name="ref_type" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>
