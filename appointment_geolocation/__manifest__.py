@@ -55,6 +55,7 @@ License: LGPL-3
     'installable': True,
     'application': False,
     'auto_install': False,
+    
     'icon': '/appointment_geolocation/static/description/icon.png',
     'images': ['static/description/banner.png'],
 }
