@@ -1,0 +1,20 @@
+
+<odoo>
+    <!-- Inherit the tree view for calendar.event that displays appointments -->
+    <record id="view_calendar_event_tree_geolocation" model="ir.ui.view">
+        <field name="name">calendar.event.tree.geolocation</field>
+        <field name="model">calendar.event</field>
+        <!-- Reference the existing tree view by its external ID -->
+        <field name="inherit_id" ref="appointment.calendar_event_view_tree_booking"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert latitude/longitude right after the 'stop' field (or wherever you prefer) -->
+            <xpath expr="//field[@name='stop']" position="after">
+                <!--<field name="latitude" string="Latitude"/>-->
+                <!--<field name="longitude" string="Longitude"/>-->
+		<field name="location_url" string="Map" widget="url"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

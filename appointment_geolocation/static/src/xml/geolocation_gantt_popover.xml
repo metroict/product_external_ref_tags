@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-inherit="appointment.AppointmentBookingGanttPopover" t-inherit-mode="extension">
+    <xpath expr="//button" position="after">
+      <button class="btn btn-sm btn-primary me-1" t-on-click="onClickCaptureLocation">
+         Capture Location
+      </button>
+    </xpath>
+  </t>
+</templates>

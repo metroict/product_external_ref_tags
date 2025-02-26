@@ -1,0 +1,30 @@
+<odoo>
+  <!-- Inherit the standard calendar event form view to add geolocation fields and a check-in button -->
+  <record id="view_calendar_event_form_geolocation" model="ir.ui.view">
+    <field name="name">calendar.event.form.geolocation</field>
+    <field name="model">calendar.event</field>
+    <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+    <field name="arch" type="xml">
+      
+      <!-- Insert geolocation fields inside the form -->
+      <xpath expr="//sheet" position="inside">
+        <group string="Geolocation" colspan="2">
+          <field name="latitude" readonly="1"/>
+          <field name="longitude" readonly="1"/>
+        </group>
+      </xpath>
+
+      <!-- Ensure the <header> is properly wrapped inside <xpath> -->
+      <xpath expr="//form" position="inside">
+        <header>
+          <button name="action_confirm_checkin"
+                  type="object"
+                  string="Confirm Check-In"
+                  class="oe_highlight"
+                  icon="fa-map-marker"/>
+        </header>
+      </xpath>
+
+    </field>
+  </record>
+</odoo>

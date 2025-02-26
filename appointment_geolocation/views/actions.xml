@@ -1,0 +1,6 @@
+<odoo>
+    <record id="action_confirm_checkin" model="ir.actions.client">
+        <field name="name">Confirm Check-In</field>
+        <field name="tag">appointment_geolocation.confirm_checkin</field>
+    </record>
+</odoo>
