@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Geolocation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .banner {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .icon {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      list-style: disc inside;
+      margin-left: 20px;
+    }
+    ol {
+      margin-left: 20px;
+    }
+    .screenshot {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Banner Image -->
+    <img src="banner.png" alt="Appointment Geolocation Banner" class="banner">
+    
+    <!-- Module Title and Icon -->
+    <h1>Appointment Geolocation</h1>
+    <img src="icon.png" alt="Appointment Geolocation Icon" class="icon">
+    
+    <!-- Overview -->
+    <h2>Overview</h2>
+    <p>
+      Appointment Geolocation enhances the calendar event form by capturing your current geolocation (latitude and longitude) when an employee confirms check-in. A clickable Google Maps link is generated based on the captured coordinates, making it easy to visualize the appointment location.
+    </p>
+    
+    <!-- Features -->
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Geolocation Capture:</strong> Automatically records latitude and longitude upon check-in.</li>
+      <li><strong>Clickable Map Link:</strong> Generates a Google Maps URL from the captured coordinates.</li>
+      <li><strong>Integrated Check-In:</strong> Adds a <em>Confirm Check-In</em> button to the appointment form.</li>
+      <li><strong>Gantt View Integration:</strong> Provides a <em>Capture Location</em> button in the Gantt popover for quick geolocation capture.</li>
+      <li><strong>Reset Functionality:</strong> Offers a mechanism to reset the geolocation data to 0.0.</li>
+    </ul>
+    
+    <!-- Installation Instructions -->
+    <h2>Installation</h2>
+    <ol>
+      <li><strong>Place Module:</strong> Copy the module folder into your custom addons directory.</li>
+      <li><strong>Update Odoo:</strong> Restart your Odoo server and update the Apps list.</li>
+      <li><strong>Install Module:</strong> Locate <em>Appointment Geolocation</em> in the Apps menu and install the module.</li>
+    </ol>
+    
+    <!-- Usage Details -->
+    <h2>Usage</h2>
+    <p>
+      <strong>Calendar Event Form:</strong> Open an appointment to view the additional geolocation fields (latitude, longitude, and a clickable map link). Click the <em>Confirm Check-In</em> button to capture your current location.
+    </p>
+    <p>
+      <strong>Gantt View:</strong> Click the <em>Capture Location</em> button in the Gantt popover to quickly record your geolocation.
+    </p>
+    
+    <!-- Screenshots -->
+    <h2>Screenshots</h2>
+    <h3>Gantt View Popover</h3>
+    <img src="screenshot_gantt_view_popover.png" alt="Gantt View Popover" class="screenshot">
+    <h3>Map Link Preview</h3>
+    <img src="screenshot_map_link.png" alt="Map Link Preview" class="screenshot">
+    
+    <!-- FAQ -->
+    <h2>FAQ</h2>
+    <h3>What happens if my browser doesn't support geolocation?</h3>
+    <p>
+      The module displays a notification and falls back to the default check-in behavior without capturing geolocation.
+    </p>
+    <h3>Can I reset the captured geolocation?</h3>
+    <p>
+      Yes, the module provides an "Uncheck-In" functionality that resets the latitude and longitude fields to 0.0.
+    </p>
+    <h3>How is the Google Maps link generated?</h3>
+    <p>
+      The module uses the captured latitude and longitude to create a URL in the format: <br>
+      <code>https://www.google.com/maps?q=latitude,longitude</code>
+    </p>
+    
+    <!-- Support -->
+    <h2>Support</h2>
+    <p>
+      For support or further inquiries, please contact: <a href="mailto:support@metroict.com">support@metroict.com</a>.
+    </p>
+    
+    <!-- License -->
+    <h2>License</h2>
+    <p>
+      This module is licensed under the LGPL-3 License.
+    </p>
+  </div>
+</body>
+</html>
