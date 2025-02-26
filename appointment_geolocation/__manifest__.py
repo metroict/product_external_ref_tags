@@ -35,6 +35,6 @@
     "installable": True,
     "application": False,
     "auto_install": False,
-    'icon': '/appointment_geolocation/static/description/icon.png',  # Path to the icon file
-    'images': ['static/description/banner.png'],
+    "icon": "/appointment_geolocation/static/description/icon.png",
+    "images": ["static/description/banner.png"],
 }
